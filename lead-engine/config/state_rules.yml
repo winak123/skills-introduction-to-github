@@ -1,0 +1,60 @@
+# Compliance rules, by state.
+#
+# ============================ READ THIS FIRST ============================
+# These values are a CONSERVATIVE STARTING TEMPLATE, not legal advice and
+# not a researched survey of any state's law. Solicitation rules for
+# probate and divorce parties vary by state, and some are set by your real
+# estate commission or your broker rather than by statute.
+#
+# Before your first mailing: take this file to your broker and, if the
+# volume justifies it, a local attorney. Replace `verified: false` with the
+# date you confirmed each entry. The pipeline runs fine either way - this
+# flag exists so you can tell at a glance what you have actually checked.
+# =========================================================================
+
+defaults:
+  # Days after a death before an heir may be solicited. 30 is a floor
+  # chosen for decency, not derived from any statute. Several states set a
+  # longer statutory period; a few set none at all.
+  mourning_period_days: 30
+
+  # Whether physical mail is permitted during that window. Mail is the
+  # least intrusive channel and the easiest to ignore, so it is the usual
+  # carve-out - but confirm it for your state.
+  mail_allowed_during_wait: true
+
+  # Days after a divorce decree before calling. Contacting a party while
+  # the case is still pending risks interfering with active litigation,
+  # and neither spouse can usually sell alone before the decree.
+  divorce_wait_days: 30
+
+  # TCPA calling hours in the CALLED party's local time. Some states
+  # narrow this; none widen it.
+  call_window_start: "08:00"
+  call_window_end: "21:00"
+
+  # Set to true ONLY once you have wired in a real DNC scrub. Leaving it
+  # false keeps a standing warning on every phone-eligible lead.
+  dnc_scrubbed: false
+
+  verified: false
+
+states:
+  # Add an entry per state you work. Anything omitted inherits `defaults`.
+  # The entries below are placeholders showing the shape - the numbers are
+  # the defaults, not researched values. Verify before relying on them.
+
+  TX:
+    mourning_period_days: 30
+    mail_allowed_during_wait: true
+    verified: false
+
+  CA:
+    mourning_period_days: 30
+    mail_allowed_during_wait: true
+    verified: false
+
+  FL:
+    mourning_period_days: 30
+    mail_allowed_during_wait: true
+    verified: false

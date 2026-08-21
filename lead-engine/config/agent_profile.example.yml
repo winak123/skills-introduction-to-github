@@ -1,0 +1,19 @@
+# Your details. Every one of these appears in the drafts, so they must be
+# accurate - your license number on a letter is a regulated disclosure.
+# Copy to config/agent_profile.yml and fill in.
+
+name: Jane Doe
+brokerage: Example Realty Group
+license_number: "TX-0000000"
+phone: "(512) 555-0100"
+email: jane@example.com
+
+# Required on email under CAN-SPAM.
+mailing_address: "100 Main St, Suite 4, Round Rock, TX 78664"
+
+market_area: Williamson County
+
+# One specific, TRUE thing that makes you the right call. A real number or
+# a real fact beats every adjective. Leave blank rather than inflate it -
+# the drafting prompt will not invent one for you.
+credential_note: ""
