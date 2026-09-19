@@ -1,0 +1,33 @@
+# Scoring weights. Every lead is scored 0-100 against these.
+#
+# Tune them against your OWN closed deals - these defaults are reasonable
+# priors, not findings. After you have 20-30 outcomes, look at which
+# signals actually preceded a listing and raise those weights.
+
+weights:
+  authority: 25          # contact can sign a listing agreement
+  timing: 20             # inside the useful window after filing
+  has_property: 15       # the record names real property at all
+  absentee: 15           # contact lives out of state
+  equity: 15             # enough equity for a sale to clear costs
+  vacant: 10             # an empty house costs money every month
+  multiple_heirs: 5      # co-owners usually liquidate rather than split
+  reachable: 5           # we have some way to make contact
+  no_property_penalty: -30   # applied when no property is identified
+
+timing:
+  probate:
+    open_days: 30        # before this, no authority to sell and it reads badly
+    peak_start: 45
+    peak_end: 180
+    close_days: 365      # after this, usually listed or transferred already
+  divorce:
+    open_days: 0
+    peak_start: 0
+    peak_end: 120
+    close_days: 270
+  obituary:
+    open_days: 45
+    peak_start: 60
+    peak_end: 210
+    close_days: 365

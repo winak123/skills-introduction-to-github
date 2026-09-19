@@ -1,0 +1,68 @@
+# Where your records come from.
+#
+# Copy to config/counties.yml and point it at your own exports. Each entry
+# maps a county's column names onto the pipeline's fields, so you never
+# have to reshape their CSV by hand - you describe it once here.
+#
+# HOW TO GET THE FILES: most county clerks publish probate and civil
+# dockets, or will run a bulk export on request (often for a small fee).
+# Ask the clerk's office for "bulk data" or "public records request" -
+# a documented export you receive on a schedule is far more durable than
+# scraping their search page, and it keeps you clear of the portal's
+# terms of use.
+
+state_rules: config/state_rules.yml
+scoring: config/scoring.yml
+
+sources:
+  - type: csv
+    source_name: williamson-probate
+    lead_type: probate
+    county: Williamson
+    state: TX
+    path: samples/probate_sample.csv
+    enabled: true
+    # left side = pipeline field, right side = their column heading
+    mapping:
+      case_number: "Case No"
+      filed_date: "Date Filed"
+      event_date: "Date of Death"
+      subject_name: "Decedent"
+      contact_name: "Personal Representative"
+      contact_role: "PR Type"
+      mailing_address: "PR Address"
+      mailing_city: "PR City"
+      mailing_state: "PR State"
+      mailing_zip: "PR Zip"
+      property_address: "Real Property"
+      property_city: "Property City"
+      property_state: "Property State"
+      apn: "Parcel ID"
+      assessed_value: "Assessed Value"
+      estimated_mortgage: "Est Mortgage"
+      property_vacant: "Vacant"
+      heir_count: "Heirs"
+      phone: "Phone"
+
+  - type: csv
+    source_name: williamson-divorce
+    lead_type: divorce
+    county: Williamson
+    state: TX
+    path: samples/divorce_sample.csv
+    enabled: true
+    defaults:
+      contact_role: party
+    mapping:
+      case_number: "Cause Number"
+      filed_date: "Filed"
+      event_date: "Decree Date"
+      subject_name: "Style"
+      contact_name: "Petitioner"
+      mailing_address: "Petitioner Address"
+      mailing_city: "Petitioner City"
+      mailing_state: "Petitioner State"
+      property_address: "Marital Residence"
+      property_city: "Residence City"
+      property_state: "Residence State"
+      assessed_value: "Assessed Value"

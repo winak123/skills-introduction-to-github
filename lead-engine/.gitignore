@@ -1,0 +1,13 @@
+# Never commit lead data - it is other people's personal information.
+*.db
+*.csv
+!samples/*.csv
+config/counties.yml
+config/agent_profile.yml
+leads_export*.csv
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/

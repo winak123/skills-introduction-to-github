@@ -1,0 +1,9 @@
+# Core pipeline. Everything else is Python standard library.
+PyYAML>=6.0
+
+# Optional: enables Claude-drafted outreach. Without it, and without an
+# ANTHROPIC_API_KEY, the pipeline still runs and falls back to templates.
+anthropic>=0.40.0
+
+# Development only.
+pytest>=8.0
